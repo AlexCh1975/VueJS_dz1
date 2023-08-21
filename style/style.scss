@@ -35,7 +35,7 @@ body{
     display: flex;
     justify-content: space-between;
 
-    &__left{
+    &__logo{
         @extend %flex-center-y;
     }
 
@@ -45,10 +45,8 @@ body{
 
     &__heading{
         color: $color-title;
-        // font-family: DM Serif Display;
+        font-family: DM Serif Display;
         font-size: 40px;
-        // font-style: normal;
-        font-weight: 400;
         line-height: 125%;
         margin-left: 10px;
     }
@@ -65,8 +63,6 @@ body{
         text-align: center;
         font-family: Jost;
         font-size: 20px;
-        // font-style: normal;
-        // font-weight: 400;
         line-height: 125%;
     }
 }
@@ -309,6 +305,7 @@ body{
         display: flex;
         flex-wrap: wrap;
         column-gap: 27px;
+        row-gap: 30px;
     }
 
     &__arrew_svg-hover{
@@ -342,8 +339,33 @@ body{
 
         &:hover{
             background: #F4F0EC;
+        } 
+
+    }
+
+    &__img{
+
+        &_box{
+            position: relative;
         }
 
+        &_annotation{
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            color: $color-text;
+            font-family: Jost;
+            font-size: 16px;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.16px;
+            text-transform: capitalize;
+            border-radius: 8px 8px 8px 0px;
+            background: #FFF;
+            padding: 4px 5px 8px 11px;
+            width: 124px;
+            height: 41px;
+            flex-shrink: 0;
+        }
     }
 
     &__title{
@@ -380,7 +402,7 @@ body{
     padding-bottom: 134px;
 
 
-    &__logo-box{
+    &__logo{
         @extend %flex-center-y;
         gap: 10px;
         margin-bottom: 18px;
@@ -458,4 +480,155 @@ body{
         line-height: 300%;
         letter-spacing: 0.22px;
     }
+}
+
+
+/******* Blog ********/
+
+/******* top-article *******/
+
+.top-article{
+    background-image: url(/images/news-background.png);
+    height: 365px;
+    width: 100%;
+    @extend %flex-center-x;
+    align-items: flex-end;
+
+    &__content{
+        padding: 41px 78px;
+        border-radius: 37px 37px 0px 0px;
+        background: #FFF;
+        @extend %flex-center-y;
+        flex-direction: column;
+    }
+
+    &__heading{
+        color: $color-title;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        line-height: 125%; /* 62.5px */
+    }
+
+    &__breadcrumbs{
+        display: flex;
+    }
+
+    &__li{
+        color: $color-text;
+        font-family: Jost;
+        font-size: 22px;
+        line-height: 150%; /* 33px */
+        letter-spacing: 0.22px
+    }
+
+    &__li:not(:last-child)::after{
+        padding: 3px;
+        color: $color-text;
+        content: "\002F";
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+
+/****** Main ******/
+/**** Article-Content *******/
+
+.article-content{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+/**** Post ****/
+
+.post{
+    // margin-bottom: 150px;
+
+    &__img{
+        border-radius: 42px;
+    }
+
+    &__heading{
+        color: $color-title;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        line-height: 125%; /* 62.5px */
+        letter-spacing: 1px;
+        margin-bottom: 33px;
+    }
+
+    &__block{
+        display: flex;
+        padding: 22px;
+        gap: 65px;
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+    }
+
+    &__content{
+        padding-top: 50px;
+
+        &_title{
+            width: 463px;
+            color: $color-title;
+            font-family: DM Serif Display;
+            font-size: 25px;
+            line-height: 125%; /* 31.25px */
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+        }
+
+        &_text{
+            width: 469px;
+            color: $color-text;
+            font-family: Jost;
+            font-size: 22px;
+            line-height: 150%; /* 33px */
+            letter-spacing: 0.22px;
+            margin-bottom: 41px;
+        }
+
+        &_footer{
+            @extend %flex-center-y;
+            justify-content: space-between;
+        }
+
+        &_date{
+            color: $color-text;
+            font-family: Jost;
+            font-size: 16px;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.16px;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.news-blog{
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+.news__conteiner{
+    @extend %flex-center-x;
+}
+
+.pagination{
+    margin-top: 51px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    // &__li.number{
+    //     color: $color-title;
+    //     font-family: Jost;
+    //     font-size: 16px;
+    //     font-weight: 500;
+    //     line-height: 150%; /* 24px */
+    //     text-transform: capitalize;
+    //     padding: 15px;
+    //     border-radius: 100%;
+    //     border: 1px solid #CDA274;
+    // }
 }
