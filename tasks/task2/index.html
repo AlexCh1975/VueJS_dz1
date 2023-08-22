@@ -19,7 +19,7 @@
         <button @click="setElement()">Добавить</button>
       
         <ul class="list">
-            <li v-for="item in items" @click="remove($event)">{{item.text}}</li>
+            <li v-for="item in items" @click="remove(item)">{{item.text}}</li>
         </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -43,10 +43,17 @@
                         const temp = {};
                         temp.text = this.text;
                         this.items.push(temp);
+                        console.log(this.items)
                     },
 
-                    remove(event){
-                        event.target.remove();
+                    remove(item){
+                        // event.target.remove();
+                        const index = this.items.findIndex(el => el.text === item.text);
+                        if (index !== -1){
+                            this.items.splice(index, 1);
+                        }
+                        console.log(this.items)
+                        
                     }
                 }
             })
